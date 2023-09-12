@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "k8s-cluster" {
   name = "k8s-cluster"
-  location = "Central Australia"
+  location = "Australia Central"
 }
 
 resource "azurerm_kubernetes_cluster" "myk8scluster" {
