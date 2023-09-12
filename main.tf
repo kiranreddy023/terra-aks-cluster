@@ -9,7 +9,7 @@ resource "azurerm_kubernetes_cluster" "myk8scluster" {
   location = azurerm_resource_group.k8s-cluster.location
   dns_prefix = "kirank8s"
   default_node_pool {
-    name = "kirannodepool-dev"
+    name = "kirannodepool"
     node_count = 1
     vm_size = "Standard_D2_v2"
   }
