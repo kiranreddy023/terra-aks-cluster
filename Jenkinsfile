@@ -1,15 +1,17 @@
 pipeline{
     agent any
     stages{
-        stage("tf init"){
+        stage('TF Init') {
             steps {
-               sh 'terraform init'
+                script {
+                    def azureCreds = credentials('k8s')
+
+                    withAzureTerraform(credentialsId: azureCreds.id, subscriptionId: azureCreds.subscriptionId) {
+                        sh 'terraform init'
+                    }
+                }
             }
         }
-        stage("tf apply"){
-            steps {
-               sh 'terraform apply -auto-approve'
-            }
-        }
+      
     }
 }
