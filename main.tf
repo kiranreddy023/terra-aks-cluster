@@ -21,6 +21,7 @@ resource "azurerm_kubernetes_cluster" "myk8scluster" {
   tags = {
     Environment = "dev"
   }
+}
   output "clientCertificate" {
     value = "azurerm_kubernetes_cluster.myk8scluster.kube_config.0.client_certificate"
     sensitive = true
@@ -31,4 +32,3 @@ resource "azurerm_kubernetes_cluster" "myk8scluster" {
   sensitive = true
   }
 
-}
