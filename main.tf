@@ -1,15 +1,15 @@
-resource "azurerm_resource_group" "k8s-cluster" {
-  name = "k8s-cluster"
+resource "azurerm_resource_group" "k8s-cluster-2" {
+  name = "k8s-cluster-2"
   location = "Australia Central"
 }
 
-resource "azurerm_kubernetes_cluster" "myk8scluster" {
-  name = "myk8scluster"
-  resource_group_name = azurerm_resource_group.k8s-cluster.name
-  location = azurerm_resource_group.k8s-cluster.location
-  dns_prefix = "kirank8s"
+resource "azurerm_kubernetes_cluster" "myk8scluster2" {
+  name = "myk8scluster2"
+  resource_group_name = azurerm_resource_group.k8s-cluster-2.name
+  location = azurerm_resource_group.k8s-cluster-2.location
+  dns_prefix = "kirank8s1"
   default_node_pool {
-    name = "kiranpool"
+    name = "kiranpool2"
     node_count = 1
     vm_size = "Standard_D2_v2"
   }
