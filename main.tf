@@ -22,13 +22,4 @@ resource "azurerm_kubernetes_cluster" "myk8scluster" {
     Environment = "dev"
   }
 }
-  output "clientCertificate" {
-    value = "azurerm_kubernetes_cluster.myk8scluster.kube_config.0.client_certificate"
-    sensitive = true
-  }
-
-  output "kube_config" {
-  value = azurerm_kubernetes_cluster.myk8scluster.kube_config_raw
-  sensitive = true
-  }
-
+  
