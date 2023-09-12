@@ -6,7 +6,7 @@ pipeline{
                sh 'terraform init'
             }
         }
-        stage("tf init"){
+        stage("tf apply"){
             steps {
                sh 'terraform apply -auto-approve'
             }
